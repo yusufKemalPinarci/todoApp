@@ -32,7 +32,10 @@ class _TextListPageState extends State<TextListPage> {
       appBar: AppBar(
         title: Text('Text List'),
       ),
-      body: _texts != null
+      body:
+
+
+      _texts != null
           ? Column(
               children: [
                 Expanded(

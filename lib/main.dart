@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp2/defaultpage.dart';
 import 'package:todoapp2/savetextpage.dart';
 
 import 'myhomepage.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: SaveTextPage(),
+      home: DefaultPage(),
     );
   }
 }
