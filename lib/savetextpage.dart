@@ -29,7 +29,8 @@ class _SaveTextPageState extends State<SaveTextPage> {
         'name': 'Text',
         'text': _textToSave,
         'saat': saat.hour * 60 + saat.minute,
-        'tarih': dateInMilliseconds
+        'tarih': dateInMilliseconds,
+        'completed':0
       };
       final id = await _dbHelper.insert(row);
       print('inserted row id: $id');
@@ -94,12 +95,6 @@ class _SaveTextPageState extends State<SaveTextPage> {
                 onPressed: () {
                   dateInMilliseconds = tarih.millisecondsSinceEpoch;
                   _saveText();
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => TextListPage()));
-                },
-              ), ElevatedButton(
-                child: Text('git'),
-                onPressed: () {
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => TextListPage()));
                 },
