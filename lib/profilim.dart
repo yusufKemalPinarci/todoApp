@@ -36,40 +36,43 @@ class _ProfilimPageState extends State<ProfilimPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(children: [
-        Row(
-          children: [
-            Expanded(
-                child: Card(margin: EdgeInsetsDirectional.all(10),
-              child: SizedBox(
-                  width: 200,
-                  height: 250,
-                  child: Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text("tamamlanmamış görevler"), Text(_texts.length.toString(),style:TextStyle(fontSize: 30))],
-                    ),
-                  )),
-            )),
-            Expanded(
-              child: Card(margin: EdgeInsetsDirectional.all(10),
-                color: Colors.blue,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(children: [
+          Row(
+            children: [
+              Expanded(
+                  child: Card(margin: EdgeInsetsDirectional.all(10),
                 child: SizedBox(
                     width: 200,
                     height: 250,
-                    child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("tamamlanmamış görevler"),
-                        Text(_falseTexts.length.toString(),style:TextStyle(fontSize: 30))
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [Text("tamamlanan görevler",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),), Text(_texts.length.toString(),style:TextStyle(fontSize: 30))],
+                      ),
                     )),
-              ),
-            )
-          ],
-        )
-      ]),
+              )),
+              Expanded(
+                child: Card(margin: EdgeInsetsDirectional.all(10),
+                  color: Colors.blue,
+                  child: SizedBox(
+                      width: 200,
+                      height: 250,
+                      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Bekleyen görevler"),
+                          SizedBox(height: 5,),
+                          Text(_falseTexts.length.toString(),style:TextStyle(fontSize: 30))
+                        ],
+                      )),
+                ),
+              )
+            ],
+          )
+        ]),
+      ),
     );
   }
 }

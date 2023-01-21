@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseHelper {
-  static final _databaseName = "MyDatabasezzzzaaaa.db";
+  static final _databaseName = "database.db";
   static final _databaseVersion = 2;
 
   static final table = 'my_table';
@@ -53,7 +53,7 @@ class DatabaseHelper {
   // SQL code to create the database table
   static Future<void> _onCreate(Database db, int version) async {
     await db.rawInsert(''' 
-        CREATE TABLE $table ($columnId INTEGER PRIMARY KEY AUTOINCREMENT,$columnName TEXT NOT NULL, $columnText text NOT NULL,$columnsaat int,$columntarih int,$columncomplete bool default false)
+        CREATE TABLE $table ($columnId INTEGER PRIMARY KEY AUTOINCREMENT,$columnName TEXT NOT NULL, $columnText text NOT NULL,$columnsaat int default 00,$columntarih int default 00,$columncomplete bool default false)
     ''');
   }
 
